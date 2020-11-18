@@ -1,0 +1,19 @@
+.errow{
+    color:red;
+
+}
+label{
+width: 100%;
+}
+form{
+background-color: rgba(255, 255, 0, 0.267);
+text-align: center;
+}
+#all{
+    margin: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+#bu{
+    margin-bottom: 20px;
+}

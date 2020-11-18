@@ -1,0 +1,57 @@
+<div class="all">
+    <div>
+        <div>
+            <br>
+            <label>שם המתכון</label>
+            <br>
+            <input type="text" [(ngModel)]="name" />
+        </div>
+        <br>
+        <div>
+            <label>קטגוריה</label>
+            <br>
+            <select >
+                <option  *ngFor="let c of catgoryList;let i=index" type="text" name="category" >{{c.name}}</option>
+            </select>
+        </div>
+        <br>
+        <div>
+            <label>זמן ההכנה בדקות</label>
+            <br>
+            <input type="number" [(ngModel)]="duration" />
+        </div>
+
+        <div>
+            <br>
+            <label>דרגת קושי</label>
+            <br>
+            <input type="number" [(ngModel)]="difficulty" />
+        </div>
+        <br>
+        <div>
+            <label>רכיבים</label>
+            <br>
+            <div *ngFor="let l of pro;let i=index;trackBy:trackByFn">
+                <input [value]="pro[i]" type="text" (keydown.enter)="addIngline(ingr.value);" #ingr name="ingr" id=i>
+            </div>
+        </div>
+        <br>
+        <div>
+            <label>אופן ההכנה</label>
+            <br>
+            <div *ngFor="let l of pre;let i=index;trackBy:trackByFn">
+                <input [value]="l" type="text" (keydown.enter)="addpreline(pre.value);" #pre name="pre" id=i>
+            </div>
+        </div>
+        <br>
+        <div>
+            <label>תמונה</label>
+            <input type="file" [(ngModel)]="picture" />
+        </div>
+        <br>
+        <input id="bu" type="button" value="שמור" (click)="addRecipe()" />
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>

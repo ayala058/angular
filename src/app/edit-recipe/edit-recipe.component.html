@@ -1,0 +1,49 @@
+<div>
+    <div>
+        <label>שם המתכון</label>
+        <br>
+        <input type="text" [(ngModel)]="recipe.name" value="duration.name" />
+    </div>
+    <div>
+        <label>קטגוריה</label>
+        <br>
+        <select [(ngModel)]="recipe.catgory">
+            <option *ngFor="let c of catgoryList" type="text" name="category">{{c.name}}</option>
+        </select>
+    </div>
+    <div>
+        <label>זמן ההכנה בדקות</label>
+        <br>
+        <input type="number" [(ngModel)]="recipe.duration" value="recipe.duration" />
+    </div>
+    <div>
+        <label>דרגת קושי</label>
+        <br>
+        <input type="number" [(ngModel)]="recipe.difficult" value="recipe.difficult" />
+    </div>
+    <div>
+        <label>רכיבים</label>
+        <br>
+        <div *ngFor="let l of recipe.product;let i=index;trackBy:trackByFn">
+            <input value="{{recipe.product[i]}}" type="text" [(ngModel)]="recipe.product[i]">
+        </div>
+    </div>
+    <div>
+        <label>אופן ההכנה</label>
+        <br>
+        <div *ngFor="let l of recipe.preparation;let i=index">
+            <input value="{{recipe.preparation[i]}}" type="text" [(ngModel)]="recipe.preparation[i]">
+        </div>
+    </div>
+    <div>
+        <label>תמונה</label><br>
+        <input type="file" [(ngModel)]="recipe.picture" /><br>
+    </div>
+    <br>
+    <input type="button" value="שמור" (click)="saveChange()" />
+
+
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>

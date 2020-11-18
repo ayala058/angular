@@ -1,0 +1,66 @@
+<div (click)="click()"></div>
+<div id="sort">
+   <br>
+   <h2>סינון:</h2>
+   <p>סנן לפי שם מתכון</p>
+   <input type="text" [(ngModel)]="sortParam" />
+   <br>
+   <p>סנן לפי משך זמן ההכנה המקסימלי </p>
+   <input type="number" [(ngModel)]="sortParam2" />
+<br>
+<p>סנן לפי קטגוריה</p>
+<select  [(ngModel)]="Scategory">
+   <option  *ngFor="let c of catgoryList;let i=index;" type="text" name="category" >{{c.name}}</option>
+</select>
+<br>
+   <input id="bu" type="button" (click)="sort()" value="בצע סינון" />
+</div>
+<h4 *ngIf="this.noResult">אין תוצאות</h4>
+<div *ngFor="let y of this.allRecipe"
+   [ngClass]="{'recipe1':'allRecipe[y.code].code%2','recipe2':'!allRecipe[y.code].code%2'}">
+   <div [class.recipe1]="this.detail[y.code]||this.itsMe[y.code]">
+      <h1>{{y.name}}</h1>
+      <img id="img" src="{{y.urlPicture}}" />
+      <br>
+      <div>
+         <div>דרגת קושי:</div>
+         <span *ngFor=" let t of counter1(y.difficult)" class="dot1"></span>
+         <span *ngFor=" let t of counter2(y.difficult)" class="dot2"></span>
+      </div>
+      <div>
+         <div>משך ההכנה:</div>
+         <div>{{y.duration|duration}}</div>
+      </div>
+      <div><button id="bu" (click)="details(y)">{{ this.detail[y.code] == true ? 'הסתר פרטים' : 'פרטי המתכון' }}</button></div>
+      <div *ngIf="this.detail[y.code]">
+         <p>:קטגוריה</p>
+         <p>{{y.category.name}}</p>
+         <img style="width: 55px;" src="{{y.category.url}}">
+
+         <p>תאריך הוספת המתכון:{{y.date|date :'dd/MM/yyyy'}}</p>
+
+
+         <br>
+         <div>מוצרים:</div>
+         <ul>
+
+            <li *ngFor="let x of y.product">{{x}}</li>
+         </ul>
+         <ol>אופן ההכנה:
+
+            <div *ngFor="let x of y.preparation;let i=index">
+               <li> {{x}}</li>
+             </div>
+         </ol>
+     
+
+
+   </div>
+   <button *ngIf="who(y)" (click)="edit(y)">{{ this.itsMe[y.code] == true ?'בטל עריכה':'עריכה' }}</button>
+   <app-edit-recipe *ngIf="this.itsMe[y.code]" [recipe]='y'></app-edit-recipe>
+
+</div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>

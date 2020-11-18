@@ -1,0 +1,22 @@
+
+<body>
+<div id="all">
+<div class="all" >
+<input type="button" id="butt" value="להוספת מתכון" (click)="addRecipe()"/>
+
+<ul>
+    <li><a routerLink="login">כניסה </a></li>
+    <li><a routerLink="register">הרשמה</a></li>
+    <li><a routerLink="logout">יציאה</a></li>
+</ul>
+<router-outlet id="aaa"></router-outlet>
+
+<app-all-recipr (newItemEvent)="event($event)"></app-all-recipr>
+</div>
+</div>
+<meta charset="utf-8" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>

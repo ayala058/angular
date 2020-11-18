@@ -1,0 +1,50 @@
+body
+{
+    direction: rtl;
+}
+.recipe1{
+    /* background-color: rgba(0, 0, 255, 0.055); */
+height: 1300px;
+  background-color: rgb(232, 232, 253);
+
+}
+
+.recipe2{
+  width: 30%;
+  float: left;
+  /* height:100px; */
+  text-align: center;
+background-color:rgba(255, 0, 0, 0.096);
+
+  height: 600px;
+  margin: 15px;
+
+}
+.dot1 {
+    height: 25px;
+    width: 25px;
+    background-color: rgb(78, 76, 76);
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .dot2 {
+    height: 25px;
+    width: 25px;
+    background-color:#bbb;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  #sort{
+background-color: rgba(255, 255, 0, 0.267);
+text-align: center;
+margin-bottom: 60px;
+
+  }
+  #bu{
+    float:bottom;
+    margin-bottom: 30px;
+    margin-top: 30px;
+  }
+  #img{
+    width: 100%;
+  }

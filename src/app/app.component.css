@@ -1,0 +1,30 @@
+body{
+    margin: 30px;
+    direction: rtl  !important;
+    text-align: right;
+
+}
+.all{
+    direction: rtl  !important;
+    text-align: right;
+
+}
+#butt{
+ 
+    background-color: red;   
+}
+#all{
+    margin-top: 40;
+    margin-left: 40;
+    direction: ltr  !important;
+    text-align: right;
+
+}
+div{
+    direction: rtl !important;
+    text-align: right;
+
+
+}
+
+
